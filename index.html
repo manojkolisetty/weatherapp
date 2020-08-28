@@ -4,10 +4,19 @@
 
         <title>Weather app</title>
 
+        <!-- boot strap -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
     </head>
     <body>
+        <div class=" container jumbotron">
+            <h1>Enter the city name of your choice</h1>
+            <p>click the button to get the results</p>
+        </div>
 
-        <form action="/" method="POST">
+       
+
+        <form class="container"  action="/" method="POST">
             <label for="cityname">Cityname:</label>
             <input id= "cityinput" type="text" name="Cityname">
             <button type="submit">Here wego</button>

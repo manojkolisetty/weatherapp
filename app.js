@@ -34,8 +34,8 @@ app.post("/",function(req, res){
                 // const icon = weatherdata.weather[0].id;
     
     
-                res.write(" the weather is   " + weatherdecription + "!");
-                res.write(" the temp in " + query + "is" + temp + "celcius");
+                res.write("<h1> the weather is   " + weatherdecription + "! . </h1>");
+                res.write("<p> the temp in" + query + " is " + temp + " celcius <p>");
                 
                 // res. write(icon);
                 res.send();
@@ -47,6 +47,6 @@ app.post("/",function(req, res){
 
 
 //
-app.listen(process.env.PORT || 3000,function(req,res){
+app.listen(process.env.PORT ||3000,function(req,res){
     console.log('server runin on port 3000');
 })
