@@ -35,7 +35,7 @@ app.post("/",function(req, res){
     
     
                 res.write("<h1> the weather is   " + weatherdecription + "! . </h1>");
-                res.write("<p> the temp in" + query + " is " + temp + " celcius <p>");
+                res.write("<p> the temp in" + query + " is " + temp + " kelvin <p>");
                 
                 // res. write(icon);
                 res.send();
