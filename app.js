@@ -32,11 +32,11 @@ app.post("/",function(req, res){
                 const temp = weatherdata.main.temp;
                 const weatherdecription = weatherdata.weather[0].description;
                 // const icon = weatherdata.weather[0].id;
-                var res = (temp-273.15);
+                var resu = (temp-273.15);
     
-                console.log(res);
+                console.log(resu);
                 res.write("<h1> The weather is   " + weatherdecription + "! . </h1>");
-                res.write("<p> The temp in" + query + " is " + res + " celcius <p>");
+                res.write("<p> The temp in " + query + " is " + resu + " celcius <p>");
                 
                 // res. write(icon);
                 res.send();
