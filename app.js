@@ -31,13 +31,13 @@ app.post("/",function(req, res){
                 
                 const temp = weatherdata.main.temp;
                 const weatherdecription = weatherdata.weather[0].description;
-                // const icon = weatherdata.weather[0].id;
+                const icon = weatherdata.weather[0].icon;
                 var resu = (temp-273.15);
     
-                console.log(resu);
+                console.log(icon);
                 res.write("<h1> The weather is   " + weatherdecription + "! . </h1>");
                 res.write("<p> The temp in " + query + " is " + resu + " celcius <p>");
-                
+                res.write("<img src=  http://openweathermap.org/img/wn/"+icon+"@2x.png>")
                 // res. write(icon);
                 res.send();
             })
