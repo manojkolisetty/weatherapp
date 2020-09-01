@@ -24,15 +24,23 @@ app.post("/",function(req, res){
    const url = "https://api.openweathermap.org/data/2.5/weather?q="+query + "&appid=" +apikey  ;
 
    https.get(url, function (resp){
-           console.log(resp.statuscode);
-    
+
+           console.log(resp.statusCode);
+           if(resp.statusCode!==200)
+           {
+            res.sendFile(__dirname + "/failure.html");
+           }
+           
+           else{
+
+           
             resp.on("data",function(data){
                 const weatherdata = JSON.parse(data);
                 
-                const temp = weatherdata.main.temp;
+                const tempe = weatherdata.main.temp;
                 const weatherdecription = weatherdata.weather[0].description;
                 const icon = weatherdata.weather[0].icon;
-                var resu = (temp-273.15);
+                var resu = (tempe-273.15);
     
                 console.log(icon);
                 res.write("<h1> The weather is   " + weatherdecription + "! . </h1>");
@@ -41,10 +49,16 @@ app.post("/",function(req, res){
                 // res. write(icon);
                 res.send();
             })
+          } 
        })
     
 
 });
+
+ app.post("/failure",function(read,res){
+
+    res.redirect("/")
+ })
 
 
 //
